@@ -9,5 +9,8 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "private": false
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  }
 }

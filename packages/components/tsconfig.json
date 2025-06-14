@@ -12,9 +12,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "moduleDetection": "force",
     "jsx": "react-jsx",
     "strict": true
   },
   "include": ["src", "global.d.ts"],
-  "exclude": ["node_modules/**/*", "src/**/*.test.tsx", "src/**/*.stories.tsx"]
+  "exclude": ["src/**/*.test.tsx", "src/**/*.stories.tsx"]
 }

@@ -36,3 +36,4 @@ jobs:
           version: pnpm changeset:version
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}

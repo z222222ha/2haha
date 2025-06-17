@@ -39,7 +39,6 @@ jobs:
       - name: Create Release Pull Request or Publish
         uses: changesets/action@v1
         with:
-          commit: "[skip ci] chore: version packages"
           publish: pnpm changeset:publish
           version: pnpm changeset:version
         env:

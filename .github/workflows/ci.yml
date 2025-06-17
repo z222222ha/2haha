@@ -2,7 +2,9 @@ name: CI
 
 on:
   pull_request:
-    branches: master
+    # feature/ 开头的分支
+    branches:
+      - feature/*
 
 jobs:
   # 只需要定义一个job并命名为CI

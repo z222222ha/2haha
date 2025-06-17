@@ -20,6 +20,9 @@ importers:
       '@2haha/components':
         specifier: workspace:^
         version: link:../../packages/components
+      dayjs:
+        specifier: ^1.11.13
+        version: 1.11.13
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -154,6 +157,9 @@ importers:
       classnames:
         specifier: ^2.5.1
         version: 2.5.1
+      dayjs:
+        specifier: ^1.11.13
+        version: 1.11.13
       react:
         specifier: ^18.3.1
         version: 18.3.1

@@ -2,13 +2,13 @@ name: CI
 
 on:
   pull_request:
-    # feature/ 开头的分支
-    branches:
-      - feature/*
+    branches: master
 
 jobs:
-  # 只需要定义一个job并命名为CI
   CI:
+    if: |
+      github.actor != 'github-actions[bot]' && 
+      !startsWith(github.event.pull_request.title, 'chore: release')
     runs-on: ubuntu-latest
     steps:
       # 拉取项目代码

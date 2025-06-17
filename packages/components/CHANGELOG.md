@@ -1,5 +1,11 @@
 # @2haha/components
 
+## 1.1.1
+
+### Patch Changes
+
+- 408089f: test
+
 ## 1.1.0
 
 ### Minor Changes

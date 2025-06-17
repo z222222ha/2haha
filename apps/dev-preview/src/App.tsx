@@ -1,47 +1,37 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { Button } from '@2haha/components'
+
+import dayjs from 'dayjs'
+
+import { Button, Calendar } from '@2haha/components'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a
-          href="https://vite.dev"
-          target="_blank"
-        >
-          <img
-            src={viteLogo}
-            className="logo"
-            alt="Vite logo"
-          />
-        </a>
-        <a
-          href="https://react.dev"
-          target="_blank"
-        >
-          <img
-            src={reactLogo}
-            className="logo react"
-            alt="React logo"
-          />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-      </div>
-      <h1>@2haha/components preview</h1>
+      <h1>@2haha/components preview {count}</h1>
+
       <Button
         type="primary"
         onClick={() => setCount((count) => count + 1)}
       >
-        Button
+        Button +1
       </Button>
+
+      <h2>Calendar</h2>
+      <Calendar
+        value={dayjs('2024-6-18')}
+        // renderCell={(date) => {
+        //   return <div style={{ background: "yellowgreen" }}>{date.format("YYYY-MM-DD")}</div>;
+        // }}
+        // renderCellContent={(date) => {
+        //   return <div style={{ background: 'yellowgreen' }}>{date.format('YYYY-MM-DD')}</div>
+        // }}
+        locale="en-US"
+        onChange={(date) => {
+          console.log('click:', date.format('YYYY-MM-DD'))
+        }}
+      />
     </>
   )
 }

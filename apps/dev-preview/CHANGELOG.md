@@ -1,5 +1,12 @@
 # dev-preview
 
+## 0.0.6
+
+### Patch Changes
+
+- Updated dependencies [b6074a9]
+  - @2haha/components@1.1.0
+
 ## 0.0.5
 
 ### Patch Changes

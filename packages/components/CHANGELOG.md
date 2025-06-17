@@ -1,5 +1,11 @@
 # @2haha/components
 
+## 1.1.0
+
+### Minor Changes
+
+- b6074a9: add Calendar
+
 ## 1.0.5
 
 ### Patch Changes

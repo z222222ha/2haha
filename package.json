@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "git-cz",
-    "build-components": "pnpm build --filter @2haha/components",
+    "build-components": "pnpm --filter @2haha/components exec pnpm run build",
     "changeset": "changeset",
     "changeset:version": "changeset version",
     "changeset:publish": "pnpm run build-components && changeset publish"

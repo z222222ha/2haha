@@ -1,5 +1,11 @@
 # @2haha/components
 
+## 1.0.3
+
+### Patch Changes
+
+- 32f36ee: update readme file
+
 ## 1.0.2
 
 ### Patch Changes

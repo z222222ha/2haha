@@ -1,5 +1,12 @@
 # dev-preview
 
+## 0.0.3
+
+### Patch Changes
+
+- Updated dependencies [32f36ee]
+  - @2haha/components@1.0.3
+
 ## 0.0.2
 
 ### Patch Changes

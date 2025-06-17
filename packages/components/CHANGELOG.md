@@ -1,5 +1,11 @@
 # @2haha/components
 
+## 1.1.2
+
+### Patch Changes
+
+- 13c5730: test
+
 ## 1.1.1
 
 ### Patch Changes

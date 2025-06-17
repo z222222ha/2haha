@@ -35,6 +35,7 @@ function App() {
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
       </div>
+      <h1>@2haha/components preview</h1>
       <Button
         type="primary"
         onClick={() => setCount((count) => count + 1)}

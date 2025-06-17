@@ -1,20 +1,18 @@
 .btn {
-    padding: 8px 10px;
-    border: 1px solid skyblue;
-    display: inline-block;
-    border-radius: 4px;
-    cursor: pointer;
+  padding: 8px 10px;
+  border: 1px solid skyblue;
+  display: inline-block;
+  border-radius: 4px;
+  cursor: pointer;
 
-    &-primary {
-        &:hover {
-            background: lightblue;
-        }
+  &-primary {
+    &:hover {
+      background: lightblue;
     }
-    &-default {
-        background: gainsboro;
-
-        &:hover {
-            color: rgb(51, 57, 59);
-        }
+  }
+  &-default {
+    &:hover {
+      color: rgb(51, 57, 59);
     }
+  }
 }

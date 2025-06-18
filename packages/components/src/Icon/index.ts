@@ -1,5 +1,1 @@
-const Icon = () => {
-  console.log('icon')
-}
-
-export default Icon
+console.log('icon')

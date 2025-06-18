@@ -3,12 +3,14 @@ name: CI
 on:
   pull_request:
     branches: master
+    paths-ignore:
+      - '**/package.json' # 忽略所有 package.json 变更
+      - 'pnpm-lock.yaml' # 忽略 lockfile 变更
+      - '**/CHANGELOG.md' # 忽略所有 CHANGELOG
+      - '.changeset/**' # 忽略 changeset 目录
 
 jobs:
   CI:
-    if: |
-      github.actor != 'github-actions[bot]' && 
-      !startsWith(github.event.pull_request.title, 'chore: release')
     runs-on: ubuntu-latest
     steps:
       # 拉取项目代码

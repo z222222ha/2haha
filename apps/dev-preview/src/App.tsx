@@ -1,14 +1,31 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import dayjs from 'dayjs'
 
 import { Button, Calendar, Watermark } from '@2haha/components'
+import { useHover, useCookie } from '@2haha/hooks'
 
 function App() {
   const [count, setCount] = useState(0)
 
+  // useHover
+  const element = (hovered: boolean) => <div>Hover me! {hovered && 'Thanks'}</div>
+
+  const [hoverable, hovered] = useHover(element)
+
+  // useCookie
+  const [cookie, updateCookie, deleteCookie] = useCookie('hanhui')
+
+  useEffect(() => {
+    deleteCookie()
+  }, [])
+
+  const updateCookieHandler = () => {
+    updateCookie('666')
+  }
+
   return (
-    <>
+    <div style={{ padding: 20 }}>
       <h1>@2haha/components preview {count}</h1>
 
       <Button
@@ -72,7 +89,21 @@ function App() {
           </p>
         </div>
       </Watermark>
-    </>
+
+      <h2>useHover</h2>
+      <div style={{ height: 100 }}>
+        {hoverable}
+        <div>{hovered ? 'HOVERED' : ''}</div>
+      </div>
+
+      <h2>useCookie</h2>
+      <div>
+        <p>cookie 值: {cookie}</p>
+        <button onClick={updateCookieHandler}>更新 Cookie</button>
+        <br />
+        <button onClick={deleteCookie}>删除 Cookie</button>
+      </div>
+    </div>
   )
 }
 

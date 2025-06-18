@@ -8,19 +8,16 @@ interface Project {
 const projectsData: Project[] = [
   {
     title: 'Simple React Playground',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many aaaaaaaaaaaaaaaa features to help you find exactly what you're looking
-    for.`,
+    description: `Developed a browser-based Playground using React , Monaco Editor , Babel , Import-maps and Web Workers , delivering real-time preview , automated type imports , dynamic theming , shareable compressed code links , and advanced performance optimizations.`,
     imgSrc: '/static/svg/react.svg',
     href: 'http://playground.djbgem.xyz',
   },
   {
-    title: 'Paws Rescue Mini Program',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
-    imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    title: 'Cats Rescue Mini Program',
+    description: `Built a WeChat Mini Program for campus stray cat rescue using Taro 3 , WeChat Mini Program ecosystem , React , Motion and Nest.js. 
+    Responsibilities included backend API and frontend development , product page development by Next.js , and server deployment in AliYun.`,
+    imgSrc: '/static/svg/cat.svg',
+    href: 'http://cat.djbgem.xyz',
   },
 ]
 

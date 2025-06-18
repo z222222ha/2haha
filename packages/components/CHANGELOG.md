@@ -1,5 +1,11 @@
 # @2haha/components
 
+## 1.2.0
+
+### Minor Changes
+
+- 817c6d7: Watermark
+
 ## 1.1.3
 
 ### Patch Changes

@@ -1,0 +1,67 @@
+name: Deploy Playground
+
+on:
+  push:
+    branches: main
+    paths:
+      - 'apps/playground/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: Cache
+        # 缓存命中结果会存储在steps.[id].outputs.cache-hit里，该变量在继后的step中可读
+        id: cache-dependencies
+        uses: actions/cache@v3
+        with:
+          # 缓存文件目录的路径
+          path: |
+            **/node_modules
+          # key中定义缓存标志位的生成方式。runner.OS指当前环境的系统。外加对 npm.lock内容生成哈希码作为key值，如果 npm.lock改变则代表依赖有变化。
+          # 这里用.lock而不是package.json是因为package.json中还有version和description之类的描述项目但和依赖无关的属性
+          key: ${{runner.OS}}-${{hashFiles('**/pnpm-lock.yaml')}}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
+      - name: Installing Dependencies
+        # 如果缓存标志位没命中，则执行该step。否则就跳过该step
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: pnpm install
+
+      - name: Build
+        run: pnpm build
+
+      - name: Deploy files to Server
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.SSH_KNOWN_HOSTS }}
+          REMOTE_USER: 'root'
+          ARGS: '-rlgoDzvc -i --delete'
+          SOURCE: '.next public package.json ecosystem.config.js'
+          TARGET: '/www/wwwroot/cat-home-page'
+
+      - name: SSH to Server
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_KNOWN_HOSTS }} >> ~/.ssh/known_hosts
+          ssh -o StrictHostKeyChecking=no root@${{ secrets.SSH_KNOWN_HOSTS }} << 'EOF'
+            set -e
+            cd /www/wwwroot/cat-home-page
+            pnpm install
+            pm2 startOrRestart ecosystem.config.js
+          EOF

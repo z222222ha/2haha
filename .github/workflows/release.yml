@@ -2,10 +2,10 @@ name: Publish to npm
 
 on:
   push:
+    branches: master
     paths:
       - 'packages/components/**'
-    branches:
-      - master
+      - 'packages/hooks/**'
 
 jobs:
   release:

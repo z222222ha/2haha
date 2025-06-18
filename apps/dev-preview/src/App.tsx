@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import dayjs from 'dayjs'
 
-import { Button, Calendar } from '@2haha/components'
+import { Button, Calendar, Watermark } from '@2haha/components'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -32,6 +32,46 @@ function App() {
           console.log('click:', date.format('YYYY-MM-DD'))
         }}
       />
+
+      <h2>Watermark</h2>
+      <Watermark
+        content={['测试水印', '夕阳无限好']}
+        gap={[0, 0]}
+        font={{
+          color: 'green',
+        }}
+      >
+        <div>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos quod deserunt quidem quas in rem ipsam ut nesciunt asperiores dignissimos recusandae minus, eaque, harum exercitationem esse
+            sapiente? Eveniet, id provident!
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos quod deserunt quidem quas in rem ipsam ut nesciunt asperiores dignissimos recusandae minus, eaque, harum exercitationem esse
+            sapiente? Eveniet, id provident!
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos quod deserunt quidem quas in rem ipsam ut nesciunt asperiores dignissimos recusandae minus, eaque, harum exercitationem esse
+            sapiente? Eveniet, id provident!
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos quod deserunt quidem quas in rem ipsam ut nesciunt asperiores dignissimos recusandae minus, eaque, harum exercitationem esse
+            sapiente? Eveniet, id provident!
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos quod deserunt quidem quas in rem ipsam ut nesciunt asperiores dignissimos recusandae minus, eaque, harum exercitationem esse
+            sapiente? Eveniet, id provident!
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos quod deserunt quidem quas in rem ipsam ut nesciunt asperiores dignissimos recusandae minus, eaque, harum exercitationem esse
+            sapiente? Eveniet, id provident!
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos quod deserunt quidem quas in rem ipsam ut nesciunt asperiores dignissimos recusandae minus, eaque, harum exercitationem esse
+            sapiente? Eveniet, id provident!
+          </p>
+        </div>
+      </Watermark>
     </>
   )
 }

@@ -10,8 +10,8 @@
     "build-hooks": "pnpm --filter @2haha/hooks exec pnpm run build",
     "changeset": "changeset",
     "changeset:version": "changeset version",
-    "changeset:publish-components": "pnpm run build-components && changeset publish --tag components",
-    "changeset:publish-hooks": "pnpm run build-hooks && changeset publish --tag hooks"
+    "changeset:publish-components": "pnpm run build-components && changeset publish",
+    "changeset:publish-hooks": "pnpm run build-hooks && changeset publish"
   },
   "keywords": [],
   "author": "",

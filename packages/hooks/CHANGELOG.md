@@ -1,5 +1,12 @@
 # @2haha/hooks
 
+## 1.1.2
+
+### Patch Changes
+
+- f73b6a0: up
+- f72f448: update react version
+
 ## 1.1.1
 
 ### Patch Changes

@@ -7,9 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "git-cz",
     "build-components": "pnpm --filter @2haha/components exec pnpm run build",
+    "build-hooks": "pnpm --filter @2haha/hooks exec pnpm run build",
     "changeset": "changeset",
     "changeset:version": "changeset version",
-    "changeset:publish": "pnpm run build-components && changeset publish"
+    "changeset:publish-components": "pnpm run build-components && changeset publish --tag components",
+    "changeset:publish-hooks": "pnpm run build-hooks && changeset publish --tag hooks"
   },
   "keywords": [],
   "author": "",

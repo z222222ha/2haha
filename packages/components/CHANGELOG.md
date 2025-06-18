@@ -1,5 +1,11 @@
 # @2haha/components
 
+## 1.1.3
+
+### Patch Changes
+
+- b8f1e0f: test
+
 ## 1.1.2
 
 ### Patch Changes

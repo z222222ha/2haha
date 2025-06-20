@@ -19,7 +19,6 @@ export default function Playground() {
       loading="lazy"
       allowFullScreen
       aria-hidden="false"
-      tabIndex={0}
       style={{
         width: '100%',
         height: `100vh`,

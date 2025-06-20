@@ -13,12 +13,12 @@ export default function StoryBook() {
   return (
     <div>
       <iframe
+        title="storybook"
         src="http://localhost:6006"
         sandbox="allow-scripts allow-same-origin"
         loading="lazy"
         allowFullScreen
         aria-hidden="false"
-        tabIndex={0}
         style={{
           width: '100%',
           height: `calc(100vh - ${headerHeight}px)`,

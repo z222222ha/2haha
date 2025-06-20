@@ -1,5 +1,11 @@
 # @2haha/components
 
+## 1.3.0
+
+### Minor Changes
+
+- a15d410: add Icon Space Message ConfigProvider
+
 ## 1.2.0
 
 ### Minor Changes
